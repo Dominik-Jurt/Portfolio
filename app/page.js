@@ -1,10 +1,6 @@
 
 
 import 'tailwindcss/tailwind.css';
-import Image from 'next/image'
-import Header from './components/pageContainers/Header'
-import ContactForm from './components/ContactForm';
-import SocialMedia from './components/SocialMedia';
 
 export default function Home() {
   return (
