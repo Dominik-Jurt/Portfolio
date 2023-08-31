@@ -1,8 +1,5 @@
-import { Inter } from 'next/font/google'
 import Header from './components/pageContainers/Header'
 import Footer from './components/pageContainers/Footer'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',
