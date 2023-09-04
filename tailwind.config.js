@@ -24,6 +24,18 @@ module.exports = {
       '3xl': '1800px'
     },
     extend: {
+      minWidth: {
+        '2/5': '40%',
+        // => SocialMedia.js
+      },
+      maxWidth: {
+        '3/4': '75%',
+        // => Footer.js
+      },
+      margin: {
+        '1/8': '12%',
+        // => Footer.js
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

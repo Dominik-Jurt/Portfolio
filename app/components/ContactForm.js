@@ -19,14 +19,12 @@ function ContactForm() {
     };
 
     return (
-        <form className="mx-auto flex border border-gray-800 border-8 w-2/5 mt-20 space-x-12 p-12" onSubmit={handleSubmit}>
-            <div className="flex items-center w-1/2">
-                <div>
-                    <div className="text-3xl font-bold mb-2">Get in Touch</div>
-                    <div className="text-gray-600 font-semibold text-xl">If you have any questions or requests, feel free to contact me through the contact form or on Social media linked below</div>
-                </div>
+        <form className="mx-auto flex flex-col lg:flex-row border border-gray-800 border-8 w-4/5 max-w-3xl mx-6 mt-20 lg:space-x-12 p-6 lg:p-12" onSubmit={handleSubmit}>
+            <div className="w-full lg:w-1/2">
+                <div className="text-3xl font-bold mb-4">Get in Touch</div>
+                <div className="text-gray-600 font-semibold text-lg mb-6">If you have any questions or requests, feel free to contact me through the contact form or on Social media linked below</div>
             </div>
-            <div className='w-1/2'>
+            <div className="w-full lg:w-1/2">
                 <div className="mb-4">
                     <label className="block mb-1" htmlFor="name">Name:</label>
                     <input
@@ -64,8 +62,8 @@ function ContactForm() {
                     className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-600"
                 >
                     Submit
-                </button></div>
-
+                </button>
+            </div>
         </form>
     );
 }
