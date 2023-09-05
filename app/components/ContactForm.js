@@ -1,7 +1,10 @@
 "use client"
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
+
 
 function ContactForm() {
+    emailjs.init('p3w6RC1u3Fx1xY88I');
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
@@ -9,8 +12,20 @@ function ContactForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Send email using your chosen email service/API
-        // Include name, email, and message in the email content
+        emailjs.send('service_pnqa3ii', 'template_wrssqtn', {
+            to_email: 'dominik.jurt712@gmail.com', // Recipient's email
+            from_name: name,
+            from_email: email,
+            message: message,
+        }, 'p3w6RC1u3Fx1xY88I')
+        .then((response) => {
+            console.log('Email sent successfully:', response);
+            alert('Email sent successfully');
+        })
+        .catch((error) => {
+            console.error('Email sending error:', error);
+            alert('Error sending email');
+        });
 
         // Clear form fields
         setName('');
@@ -67,5 +82,7 @@ function ContactForm() {
         </form>
     );
 }
+
+emailjs.init('p3w6RC1u3Fx1xY88I');
 
 export default ContactForm;
