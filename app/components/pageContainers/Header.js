@@ -26,6 +26,17 @@ function Header() {
         }
     };
 
+    const closeDropdown = () => {
+        setIsDropdownOpen(false);
+    };
+
+    const scrollToAbout = () => {
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth',
+        });
+    };
+
     return (
         <header className="bg-gray-800 py-1 sticky top-0 z-50">
             <div className="container mx-auto flex justify-between items-center">
@@ -36,9 +47,9 @@ function Header() {
                         <Link href="/about" className="text-xl text-white rounded-md hover:text-gray-300 hover:bg-gray-700 py-6 px-4 font-light">About</Link>
                         <Link href="/projects" className="text-xl text-white rounded-md hover:text-gray-300 hover:bg-gray-700 py-6 px-4 font-light">Projects</Link>
                         <Link href="/resume" className="text-xl text-white rounded-md hover:text-gray-300 hover:bg-gray-700 py-6 px-4 font-light">CV</Link>
-                        <Link href="/contact" className="text-xl text-white rounded-md hover:text-gray-300 hover:bg-gray-700 py-6 px-4 font-light">Contact</Link>
+                        <a onClick={scrollToAbout} className="text-xl text-white rounded-md hover:text-gray-300 hover:bg-gray-700 py-6 px-4 font-light cursor-pointer">Contact</a>
                         <div className="flex space-x-2 text-white items-center ml-16 mr-8">
-                            <div className='text-m hover:text-gray-300 cursor-pointer' onClick={() => toggleLanguage(true)}>Eng
+                            <div className='text-m hover:text-gray-300 cursor-pointer' onClick={() => toggleLanguage(true)}>En
                             </div>
                             <div className="w-6 min-w-full h-1 rounded-full flex">
                                 <div className={leftToggleColor}></div>
@@ -61,11 +72,11 @@ function Header() {
                         </button>
                         {isDropdownOpen && (
                             <div className="absolute top-full right-0 bg-gray-800 border border-gray-700 mt-1 py-2">
-                                <Link href="/" className="block text-xl text-white hover:text-gray-300 py-2 px-4">Home</Link>
-                                <Link href="/about" className="block text-xl text-white hover:text-gray-300 py-2 px-4">About</Link>
-                                <Link href="/projects" className="block text-xl text-white hover:text-gray-300 py-2 px-4">Projects</Link>
-                                <Link href="/resume" className="block text-xl text-white hover:text-gray-300 py-2 px-4">CV</Link>
-                                <Link href="/contact" className="block text-xl text-white hover:text-gray-300 py-2 px-4">Contact</Link>
+                                <Link onClick={closeDropdown} href="/" className="block text-xl text-white hover:text-gray-300 py-2 px-4">Home</Link>
+                                <Link onClick={closeDropdown} href="/about" className="block text-xl text-white hover:text-gray-300 py-2 px-4">About</Link>
+                                <Link onClick={closeDropdown} href="/projects" className="block text-xl text-white hover:text-gray-300 py-2 px-4">Projects</Link>
+                                <Link onClick={closeDropdown} href="/resume" className="block text-xl text-white hover:text-gray-300 py-2 px-4">CV</Link>
+                                <Link onClick={closeDropdown} href="/contact" className="block text-xl text-white hover:text-gray-300 py-2 px-4">Contact</Link>
                                 {isEnglish ?
                                     <div className='block text-xl text-white hover:text-gray-300 py-2 px-4 cursor-pointer' onClick={() => toggleLanguage(false)}>Switch to German
                                     </div>
