@@ -20,11 +20,9 @@ function ContactForm() {
         }, 'p3w6RC1u3Fx1xY88I')
         .then((response) => {
             console.log('Email sent successfully:', response);
-            alert('Email sent successfully');
         })
         .catch((error) => {
             console.error('Email sending error:', error);
-            alert('Error sending email');
         });
 
         // Clear form fields
